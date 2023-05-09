@@ -43,7 +43,7 @@ function checkAnswer(currLevel) {
     else {
         playSound("wrong");
         $("body").addClass("game-over");
-        $("#level-title").text("Game Over! Press \"s\"to play again");
+        $("#level-title").html("Game Over!<br><br>Press \"s\"to play again.");
         setTimeout(function () { $("body").removeClass("game-over"); }, 200);
         startOver();
     }
