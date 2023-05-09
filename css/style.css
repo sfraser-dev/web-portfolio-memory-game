@@ -10,16 +10,8 @@ body {
   color: #FEF2BF;
 }
 
-.container {
-  display: block;
-  width: 50%;
-  margin: auto;
-
-}
-
 .btn {
   margin: 25px;
-  /* display: inline-block; THIS IS CAUSING A WEIRD BLUE LINE */
   height: 200px;
   width: 200px;
   border: 10px solid black;
@@ -50,4 +42,9 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
 }
