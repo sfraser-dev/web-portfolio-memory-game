@@ -24,14 +24,16 @@ $(document).on("keydown", (event) => {
 // Listen for player clicks on all buttons (ie: listen on all btn classes).
 // Note: cannot use arrow function as we need to access "this".
 $(".btn").click(function () {
-    // The IDs of the buttons are their colors.
-    const userChosenColor = $(this).attr("id");
-    // Store the chosen color in the player's pattern array.
-    userArray.push(userChosenColor);
-    playSound(userChosenColor);
-    animateButton(userChosenColor);
+    if (gameStarted === true) {
+        // The IDs of the buttons are their colors.
+        const userChosenColor = $(this).attr("id");
+        // Store the chosen color in the player's pattern array.
+        userArray.push(userChosenColor);
+        playSound(userChosenColor);
+        animateButton(userChosenColor);
 
-    checkAnswer(userArray.length-1);
+        checkAnswer(userArray.length - 1);
+    }
 });
 
 // Game logic:
@@ -56,7 +58,7 @@ function checkAnswer(currLevel) {
     else {
         playSound("wrong");
         $("body").addClass("game-over");
-        $("#level-title").html("Game Over!<br><br>Press \"s\" to play again.");
+        $("#level-title").html("Game Over! Press \"s\" to play again.");
         setTimeout(function () { $("body").removeClass("game-over"); }, 200);
         startOver();
     }
@@ -72,7 +74,7 @@ function computerNextSequence() {
     const randomChosenColor = buttonColors[randomNumber];
     // Store the chosen color in the computer's pattern array.
     computerArray.push(randomChosenColor);
-    
+
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColor);
 }
@@ -81,7 +83,7 @@ function computerNextSequence() {
 function animateButton(col) {
     $("#" + col).addClass("pressed");
     setTimeout(function () {
-        $("#"+col).removeClass("pressed");
+        $("#" + col).removeClass("pressed");
     }, 100);
 }
 
