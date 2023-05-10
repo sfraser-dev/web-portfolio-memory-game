@@ -1,13 +1,12 @@
-$color_1: #FEF2BF;
-$color_2: black;
-$color_3: white;
-$font-family_1: 'Press Start 2P', cursive;
-$background-color_1: #011F3F;
-$background-color_2: red;
-$background-color_3: grey;
-$background-color_4: yellow;
-$background-color_5: green;
-$background-color_6: blue;
+$title-col: #FEF2BF;
+$cell-border-col: black;
+$font-family-1: 'Press Start 2P', cursive;
+$background-col: #011F3F;
+$background-col-pressed: grey;
+$background-col_red_cell: red;
+$background-col_yellow_cell: yellow;
+$background-col_green_cell: green;
+$background-col_blue_cell: blue;
 
 * {
     box-sizing: border-box;
@@ -17,69 +16,69 @@ $background-color_6: blue;
 
 body {
     text-align: center;
-    background-color: $background-color_1;
+    background-color: $background-col;
 }
 
 #level-title {
-    font-family: $font-family_1;
+    font-family: $font-family-1;
     font-size: 0.5rem;
     margin: 2% 0 10%;
-    color: $color_1;
+    color: $title-col;
 }
 
 .game-over {
-    background-color: $background-color_2;
+    background-color: $background-col_red_cell;
     opacity: 0.8;
 }
 
 .pressed {
-    box-shadow: 0 0 20px $color_3;
-    background-color: $background-color_3;
+    box-shadow: 0 0 20px $title-col;
+    background-color: $background-col-pressed;
 }
 
 .empty-cell {
-    background-color: $background-color_1;
+    background-color: $background-col;
 }
 
 @mixin filled-cell {
     margin: 10px;
-    border: 3px solid $color_2;
+    border: 3px solid $cell-border-col;
     border-radius: 10%;
 
     @media only screen and (min-width: 400px) {
-        border: 5px solid $color_2;
+        border: 5px solid $cell-border-col;
         border-radius: 12%;
     }
 
     @media only screen and (min-width: 600px) {
-        border: 7px solid $color_2;
+        border: 7px solid $cell-border-col;
         border-radius: 16%;
     }
 
     @media only screen and (min-width: 786px) {
-        border: 10px solid $color_2;
+        border: 10px solid $cell-border-col;
         border-radius: 20%;
 
     }
 }
 
 .yellow-cell {
-    background-color: $background-color_4;
+    background-color: $background-col_yellow_cell;
     @include filled-cell;
 }
 
 .green-cell {
-    background-color: $background-color_5;
+    background-color: $background-col_green_cell;
     @include filled-cell;
 }
 
 .blue-cell {
-    background-color: $background-color_6;
+    background-color: $background-col_blue_cell;
     @include filled-cell;
 }
 
 .red-cell {
-    background-color: $background-color_2;
+    background-color: $background-col_red_cell;
     @include filled-cell;
 }
 
@@ -87,7 +86,7 @@ body {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: 50px 50px;
-    background-color: $background-color_1;
+    background-color: $background-col;
 }
 
 @media only screen and (min-width: 400px) {
