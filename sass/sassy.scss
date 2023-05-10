@@ -40,46 +40,26 @@ body {
     background-color: $background-col;
 }
 
-@mixin filled-cell {
+.filled-cell {
     margin: 10px;
     border: 3px solid $cell-border-col;
     border-radius: 10%;
-
-    @media only screen and (min-width: 400px) {
-        border: 5px solid $cell-border-col;
-        border-radius: 12%;
-    }
-
-    @media only screen and (min-width: 600px) {
-        border: 7px solid $cell-border-col;
-        border-radius: 16%;
-    }
-
-    @media only screen and (min-width: 786px) {
-        border: 10px solid $cell-border-col;
-        border-radius: 20%;
-
-    }
 }
 
 .yellow-cell {
     background-color: $background-col_yellow_cell;
-    @include filled-cell;
 }
 
 .green-cell {
     background-color: $background-col_green_cell;
-    @include filled-cell;
 }
 
 .blue-cell {
     background-color: $background-col_blue_cell;
-    @include filled-cell;
 }
 
 .red-cell {
     background-color: $background-col_red_cell;
-    @include filled-cell;
 }
 
 .grid-container {
@@ -91,12 +71,12 @@ body {
 
 @media only screen and (min-width: 400px) {
     .grid-container {
+        grid-template-columns: auto auto auto auto;
         grid-template-rows: 100px 100px;
     }
 
     #level-title {
-        font-size: 0.8rem;
-        margin: 2% 0 7%;
+        font-size: 0.65rem;
     }
 }
 
@@ -106,8 +86,7 @@ body {
     }
 
     #level-title {
-        font-size: 1.1rem;
-        margin: 2% 0 8%;
+        font-size: 0.9rem;
     }
 }
 
@@ -117,8 +96,7 @@ body {
     }
 
     #level-title {
-        font-size: 1.3rem;
-        margin: 2% 0 6%;
+        font-size: 1.1rem;
     }
 }
 
@@ -128,8 +106,7 @@ body {
     }
 
     #level-title {
-        font-size: 1.6rem;
-        margin: 2% 0 5%;
+        font-size: 1.3rem;
     }
 }
 
@@ -139,8 +116,7 @@ body {
     }
 
     #level-title {
-        font-size: 1.9rem;
-        margin: 2% 0 3%;
+        font-size: 1.5rem;
     }
 }
 
@@ -150,7 +126,6 @@ body {
     }
 
     #level-title {
-        font-size: 2.3rem;
-        margin: 2% 0 2%;
+        font-size: 1.9rem;
     }
 }
