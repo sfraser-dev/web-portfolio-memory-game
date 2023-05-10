@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   text-align: center;
   background-color: #011F3F;
@@ -5,8 +11,8 @@ body {
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 2.2rem;
-  margin:  5%;
+  font-size: 0.7rem;
+  margin: 5%;
   color: #FEF2BF;
 }
 
@@ -16,11 +22,6 @@ body {
   width: 200px;
   border: 10px solid black;
   border-radius: 20%;
-}
-
-.game-over {
-  background-color: red;
-  opacity: 0.8;
 }
 
 .red {
@@ -39,12 +40,101 @@ body {
   background-color: yellow;
 }
 
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
 
-.flex-container {
-  display: flex;
-  justify-content: center;
+.empty {
+  background-color: #011F3F;
+}
+
+.item2 {
+  background-color: yellow;
+  margin: 10px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.item3 {
+  background-color: green;
+  margin: 10px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.item6 {
+  background-color: blue;
+  margin: 10px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.item7 {
+  background-color: red;
+  margin: 10px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 50px 50px;
+  background-color: #011F3F;
+}
+
+@media only screen and (min-width: 400px) {
+  .grid-container {
+    grid-template-rows: 100px 100px;
+  }
+
+  #level-title {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .grid-container {
+    grid-template-rows: 150px 150px;
+  }
+
+  #level-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (min-width: 786px) {
+  .grid-container {
+    grid-template-rows: 175px 175px;
+  }
+
+  #level-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 920px) {
+  .grid-container {
+    grid-template-rows: 200px 200px;
+  }
+
+  #level-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .grid-container {
+    grid-template-rows: 250px 250px;
+  }
+
+  #level-title {
+    font-size: 2.3rem;
+  }
 }
