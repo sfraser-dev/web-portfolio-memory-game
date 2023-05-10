@@ -11,8 +11,8 @@ body {
 
 #level-title {
   font-family: "Press Start 2P", cursive;
-  font-size: 0.7rem;
-  margin: 5%;
+  font-size: 0.5rem;
+  margin: 2% 0 3%;
   color: #FEF2BF;
 }
 
@@ -30,32 +30,104 @@ body {
   background-color: #011F3F;
 }
 
-.item2 {
+.yellow-cell {
   background-color: yellow;
   margin: 10px;
-  border: 10px solid black;
-  border-radius: 20%;
+  border: 3px solid black;
+  border-radius: 10%;
+}
+@media only screen and (min-width: 400px) {
+  .yellow-cell {
+    border: 5px solid black;
+    border-radius: 12%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .yellow-cell {
+    border: 7px solid black;
+    border-radius: 16%;
+  }
+}
+@media only screen and (min-width: 786px) {
+  .yellow-cell {
+    border: 10px solid black;
+    border-radius: 20%;
+  }
 }
 
-.item3 {
+.green-cell {
   background-color: green;
   margin: 10px;
-  border: 10px solid black;
-  border-radius: 20%;
+  border: 3px solid black;
+  border-radius: 10%;
+}
+@media only screen and (min-width: 400px) {
+  .green-cell {
+    border: 5px solid black;
+    border-radius: 12%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .green-cell {
+    border: 7px solid black;
+    border-radius: 16%;
+  }
+}
+@media only screen and (min-width: 786px) {
+  .green-cell {
+    border: 10px solid black;
+    border-radius: 20%;
+  }
 }
 
-.item6 {
+.blue-cell {
   background-color: blue;
   margin: 10px;
-  border: 10px solid black;
-  border-radius: 20%;
+  border: 3px solid black;
+  border-radius: 10%;
+}
+@media only screen and (min-width: 400px) {
+  .blue-cell {
+    border: 5px solid black;
+    border-radius: 12%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .blue-cell {
+    border: 7px solid black;
+    border-radius: 16%;
+  }
+}
+@media only screen and (min-width: 786px) {
+  .blue-cell {
+    border: 10px solid black;
+    border-radius: 20%;
+  }
 }
 
-.item7 {
+.red-cell {
   background-color: red;
   margin: 10px;
-  border: 10px solid black;
-  border-radius: 20%;
+  border: 3px solid black;
+  border-radius: 10%;
+}
+@media only screen and (min-width: 400px) {
+  .red-cell {
+    border: 5px solid black;
+    border-radius: 12%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .red-cell {
+    border: 7px solid black;
+    border-radius: 16%;
+  }
+}
+@media only screen and (min-width: 786px) {
+  .red-cell {
+    border: 10px solid black;
+    border-radius: 20%;
+  }
 }
 
 .grid-container {
@@ -97,9 +169,17 @@ body {
     font-size: 1.6rem;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1200px) {
   .grid-container {
     grid-template-rows: 250px 250px;
+  }
+  #level-title {
+    font-size: 1.9rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .grid-container {
+    grid-template-rows: 300px 300px;
   }
   #level-title {
     font-size: 2.3rem;
