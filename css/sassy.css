@@ -10,7 +10,7 @@ body {
 }
 
 #level-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.7rem;
   margin: 5%;
   color: #FEF2BF;
@@ -26,7 +26,7 @@ body {
   background-color: grey;
 }
 
-.empty {
+.empty-cell {
   background-color: #011F3F;
 }
 
@@ -69,47 +69,38 @@ body {
   .grid-container {
     grid-template-rows: 100px 100px;
   }
-
   #level-title {
     font-size: 0.8rem;
   }
 }
-
 @media only screen and (min-width: 600px) {
   .grid-container {
     grid-template-rows: 150px 150px;
   }
-
   #level-title {
     font-size: 1.1rem;
   }
 }
-
 @media only screen and (min-width: 786px) {
   .grid-container {
     grid-template-rows: 175px 175px;
   }
-
   #level-title {
     font-size: 1.3rem;
   }
 }
-
 @media only screen and (min-width: 920px) {
   .grid-container {
     grid-template-rows: 200px 200px;
   }
-
   #level-title {
     font-size: 1.6rem;
   }
 }
-
 @media only screen and (min-width: 1440px) {
   .grid-container {
     grid-template-rows: 250px 250px;
   }
-
   #level-title {
     font-size: 2.3rem;
   }

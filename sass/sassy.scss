@@ -1,0 +1,106 @@
+$color_1: #FEF2BF;
+$color_2: black;
+$color_3: white;
+$font-family_1: 'Press Start 2P', cursive;
+$background-color_1: #011F3F;
+$background-color_2: red;
+$background-color_3: grey;
+$background-color_4: yellow;
+$background-color_5: green;
+$background-color_6: blue;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	text-align: center;
+	background-color: $background-color_1;
+}
+#level-title {
+	font-family: $font-family_1;
+	font-size: 0.7rem;
+	margin: 5%;
+	color: $color_1;
+}
+.game-over {
+	background-color: $background-color_2;
+	opacity: 0.8;
+}
+.pressed {
+	box-shadow: 0 0 20px $color_3;
+	background-color: $background-color_3;
+}
+.empty-cell {
+	background-color: $background-color_1;
+}
+
+@mixin filled-cell {
+    margin: 10px;
+	border: 10px solid $color_2;
+	border-radius: 20%;
+}
+
+.item2 {
+	background-color: $background-color_4;
+    @include filled-cell();
+}
+.item3 {
+	background-color: $background-color_5;
+    @include filled-cell();
+}
+.item6 {
+	background-color: $background-color_6;
+    @include filled-cell();
+}
+.item7 {
+	background-color: $background-color_2;
+    @include filled-cell();
+}
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-template-rows: 50px 50px;
+	background-color: $background-color_1;
+}
+@media only screen and (min-width: 400px) {
+	.grid-container {
+		grid-template-rows: 100px 100px;
+	}
+	#level-title {
+		font-size: 0.8rem;
+	}
+}
+@media only screen and (min-width: 600px) {
+	.grid-container {
+		grid-template-rows: 150px 150px;
+	}
+	#level-title {
+		font-size: 1.1rem;
+	}
+}
+@media only screen and (min-width: 786px) {
+	.grid-container {
+		grid-template-rows: 175px 175px;
+	}
+	#level-title {
+		font-size: 1.3rem;
+	}
+}
+@media only screen and (min-width: 920px) {
+	.grid-container {
+		grid-template-rows: 200px 200px;
+	}
+	#level-title {
+		font-size: 1.6rem;
+	}
+}
+@media only screen and (min-width: 1440px) {
+	.grid-container {
+		grid-template-rows: 250px 250px;
+	}
+	#level-title {
+		font-size: 2.3rem;
+	}
+}
