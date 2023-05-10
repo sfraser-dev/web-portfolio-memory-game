@@ -12,7 +12,7 @@ body {
 #level-title {
   font-family: "Press Start 2P", cursive;
   font-size: 0.5rem;
-  margin: 2% 0 3%;
+  margin: 2% 0 10%;
   color: #FEF2BF;
 }
 
@@ -143,6 +143,7 @@ body {
   }
   #level-title {
     font-size: 0.8rem;
+    margin: 2% 0 7%;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -151,6 +152,7 @@ body {
   }
   #level-title {
     font-size: 1.1rem;
+    margin: 2% 0 8%;
   }
 }
 @media only screen and (min-width: 786px) {
@@ -159,6 +161,7 @@ body {
   }
   #level-title {
     font-size: 1.3rem;
+    margin: 2% 0 6%;
   }
 }
 @media only screen and (min-width: 920px) {
@@ -167,6 +170,7 @@ body {
   }
   #level-title {
     font-size: 1.6rem;
+    margin: 2% 0 5%;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -175,6 +179,7 @@ body {
   }
   #level-title {
     font-size: 1.9rem;
+    margin: 2% 0 3%;
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -183,5 +188,6 @@ body {
   }
   #level-title {
     font-size: 2.3rem;
+    margin: 2% 0 2%;
   }
 }
