@@ -12,7 +12,7 @@ body {
 #level-title {
   font-family: "Press Start 2P", cursive;
   font-size: 0.5rem;
-  margin: 2% 0 10%;
+  margin: 2% 0 5%;
   color: #FEF2BF;
 }
 
@@ -28,12 +28,6 @@ body {
 
 .empty-cell {
   background-color: #011F3F;
-}
-
-.filled-cell {
-  margin: 10px;
-  border: 3px solid black;
-  border-radius: 10%;
 }
 
 .yellow-cell {
@@ -52,57 +46,74 @@ body {
   background-color: red;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: 50px 50px;
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #011F3F;
 }
 
+.filled-cell {
+  margin: 10px;
+  border: 3px solid black;
+  border-radius: 10%;
+  width: 160px;
+  height: 90px;
+}
+
 @media only screen and (min-width: 400px) {
-  .grid-container {
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: 100px 100px;
+  .flex-container {
+    flex-direction: row;
+  }
+  .filled-cell {
+    width: 160px;
+    height: 180px;
   }
   #level-title {
     font-size: 0.65rem;
   }
 }
 @media only screen and (min-width: 600px) {
-  .grid-container {
-    grid-template-rows: 150px 150px;
+  .filled-cell {
+    width: 200px;
+    height: 220px;
   }
   #level-title {
     font-size: 0.9rem;
   }
 }
-@media only screen and (min-width: 786px) {
-  .grid-container {
-    grid-template-rows: 175px 175px;
+@media only screen and (min-width: 800px) {
+  .filled-cell {
+    width: 250px;
+    height: 250px;
   }
   #level-title {
     font-size: 1.1rem;
   }
 }
-@media only screen and (min-width: 920px) {
-  .grid-container {
-    grid-template-rows: 200px 200px;
+@media only screen and (min-width: 1000px) {
+  .filled-cell {
+    width: 300px;
+    height: 300px;
   }
   #level-title {
     font-size: 1.3rem;
   }
 }
 @media only screen and (min-width: 1200px) {
-  .grid-container {
-    grid-template-rows: 250px 250px;
+  .filled-cell {
+    width: 350px;
+    height: 350px;
   }
   #level-title {
     font-size: 1.5rem;
   }
 }
-@media only screen and (min-width: 1440px) {
-  .grid-container {
-    grid-template-rows: 300px 300px;
+@media only screen and (min-width: 1400px) {
+  .filled-cell {
+    width: 400px;
+    height: 400px;
   }
   #level-title {
     font-size: 1.9rem;
