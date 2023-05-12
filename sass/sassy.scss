@@ -69,8 +69,8 @@ body {
     border: 3px solid $cell-border-col;
     border-radius: 10%;
     // Mobile first design.
-    width: 160px;
-    height: 90px;
+    width: 50vw;
+    height: 15vh;
 }
 
 @media only screen and (min-width: 400px) {
@@ -79,8 +79,8 @@ body {
         flex-direction: row;
     }
     .filled-cell {
-        width: 160px;
-        height: 180px;
+        width: 25vw;
+        height: 30vh;
     }
 
     #level-title {
@@ -90,21 +90,15 @@ body {
 
 @media only screen and (min-width: 600px) {
     .filled-cell {
-        width: 200px;
-        height: 220px;
+        width: 25vw;
+        height: 30vh;
     }
-
     #level-title {
         font-size: 0.9rem;
     }
 }
 
 @media only screen and (min-width: 800px) {
-    .filled-cell {
-        width: 250px;
-        height: 250px;
-    }
-
     #level-title {
         font-size: 1.1rem;
     }
