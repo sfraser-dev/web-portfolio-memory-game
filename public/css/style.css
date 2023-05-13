@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  background-color: #011F3F;
+}
+
+#level-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
+  margin: 2% 0 5%;
+  color: #FEF2BF;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: 0 0 20px #FEF2BF;
+  background-color: grey;
+}
+
+.empty-cell {
+  background-color: #011F3F;
+}
+
+.yellow-cell {
+  background-color: yellow;
+}
+
+.green-cell {
+  background-color: green;
+}
+
+.blue-cell {
+  background-color: blue;
+}
+
+.red-cell {
+  background-color: red;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #011F3F;
+}
+
+.filled-cell {
+  margin: 10px;
+  border: 3px solid black;
+  border-radius: 10%;
+  width: 50vw;
+  height: 15vh;
+}
+
+@media only screen and (min-width: 400px) {
+  .flex-container {
+    flex-direction: row;
+  }
+  .filled-cell {
+    width: 25vw;
+    height: 30vh;
+  }
+  #level-title {
+    font-size: 0.65rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .filled-cell {
+    width: 25vw;
+    height: 30vh;
+  }
+  #level-title {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (min-width: 800px) {
+  #level-title {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  #level-title {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #level-title {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #level-title {
+    font-size: 1.9rem;
+  }
+}
