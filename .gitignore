@@ -3,9 +3,10 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
-# SF
+# Me
 *.7z
 *.zip
+.vscode/
 
 # Node artifact files
 node_modules/

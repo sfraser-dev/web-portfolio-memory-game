@@ -17,13 +17,15 @@ $background-col_blue_cell: blue;
 body {
     text-align: center;
     background-color: $background-col;
+    margin: 50px 0;
 }
 
 #level-title {
     font-family: $font-family-1;
-    font-size: 0.5rem;
-    margin: 2% 0 5%;
+    font-size: 1.5rem;
+    margin: 50px 50px;
     color: $title-col;
+    line-height: 150%;
 }
 
 .game-over {
@@ -58,7 +60,7 @@ body {
 
 .flex-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: $background-col;
@@ -68,56 +70,7 @@ body {
     margin: 10px;
     border: 3px solid $cell-border-col;
     border-radius: 10%;
-    // Mobile first design.
-    width: 50vw;
-    height: 15vh;
-}
-
-@media only screen and (min-width: 400px) {
-    // Switch to two by two display for cells.
-    .flex-container {
-        flex-direction: row;
-    }
-    .filled-cell {
-        width: 25vw;
-        height: 30vh;
-    }
-
-    #level-title {
-        font-size: 0.65rem;
-    }
-}
-
-@media only screen and (min-width: 600px) {
-    .filled-cell {
-        width: 25vw;
-        height: 30vh;
-    }
-    #level-title {
-        font-size: 0.9rem;
-    }
-}
-
-@media only screen and (min-width: 800px) {
-    #level-title {
-        font-size: 1.1rem;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    #level-title {
-        font-size: 1.3rem;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    #level-title {
-        font-size: 1.5rem;
-    }
-}
-
-@media only screen and (min-width: 1400px) {
-    #level-title {
-        font-size: 1.9rem;
-    }
+    // Mobile first chrome dev tools device emulator.
+    width: 220px;
+    height: 220px;
 }
