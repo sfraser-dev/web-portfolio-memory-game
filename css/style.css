@@ -7,13 +7,13 @@
 body {
   text-align: center;
   background-color: #011F3F;
-  margin: 50px 0;
+  margin: 40px 0;
 }
 
 #level-title {
   font-family: "Press Start 2P", cursive;
-  font-size: 1.5rem;
-  margin: 50px 50px;
+  font-size: 1rem;
+  margin: 20px 30px;
   color: #FEF2BF;
   line-height: 150%;
 }
@@ -62,4 +62,14 @@ body {
   border-radius: 10%;
   width: 220px;
   height: 220px;
+}
+
+@media only screen and (min-height: 601px) {
+  body {
+    margin: 50px;
+  }
+  #level-title {
+    font-size: 2rem;
+    margin: 50px 50px;
+  }
 }

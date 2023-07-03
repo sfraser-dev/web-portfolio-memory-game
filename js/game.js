@@ -66,7 +66,7 @@ function checkAnswer(currLevel) {
     else {
         playSound("wrong");
         $("body").addClass("game-over");
-        $("#level-title").html("Game Over! Click \"here\" or press<br>\"s\" to play again.");
+        $("#level-title").html("Game Over! Click <u>here</u> or press<br>\"s\" to play again.");
         setTimeout(function () { $("body").removeClass("game-over"); }, 300);
         startOver();
     }

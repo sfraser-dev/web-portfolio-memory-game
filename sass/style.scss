@@ -17,13 +17,13 @@ $background-col_blue_cell: blue;
 body {
     text-align: center;
     background-color: $background-col;
-    margin: 50px 0;
+    margin: 40px 0;
 }
 
 #level-title {
     font-family: $font-family-1;
-    font-size: 1.5rem;
-    margin: 50px 50px;
+    font-size: 1rem;
+    margin: 20px 30px;
     color: $title-col;
     line-height: 150%;
 }
@@ -73,4 +73,14 @@ body {
     // Mobile first chrome dev tools device emulator.
     width: 220px;
     height: 220px;
+}
+
+@media only screen and (min-height: 601px) {
+    body {
+        margin: 50px;
+    }
+    #level-title {
+        font-size: 2rem;
+        margin: 50px 50px;
+    }
 }
