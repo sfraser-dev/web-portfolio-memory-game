@@ -1,1 +1,1 @@
-Simon memory game using html, css and JS
+The Simon Memory Game using HTML, CSS and JS.
