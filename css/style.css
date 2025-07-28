@@ -64,6 +64,11 @@ body {
   height: 220px;
 }
 
+.btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 @media only screen and (min-height: 601px) {
   body {
     margin: 50px;

@@ -10,11 +10,12 @@ let computerArray = [];
 let userArray = [];
 let gameStarted = false;
 let gameLevel = 0;
+let acceptingUserInput = false;
 
 // Press "s" to start the game. Listening on entire page for a keypress using jQuery.
 $(document).on("keydown", (event) => {
     if (event.code === "KeyS" && event.key === "s") {
-        if (gameStarted === false) {
+        if (!gameStarted) {
             computerNextSequence();
             gameStarted = true;
         }
@@ -22,8 +23,8 @@ $(document).on("keydown", (event) => {
 });
 
 // Can also click "level-title" to start the game (keyboard issue on mobile devices).
-$("#level-title").click(function() {
-    if (gameStarted === false) {
+$("#level-title").click(function () {
+    if (!gameStarted) {
         computerNextSequence();
         gameStarted = true;
     }
@@ -32,14 +33,11 @@ $("#level-title").click(function() {
 // Listen for player clicks on all buttons (ie: listen on all btn classes).
 // Note: cannot use arrow function as we need to access "this".
 $(".btn").click(function () {
-    if (gameStarted === true) {
-        // The IDs of the buttons are their colors.
+    if (gameStarted && acceptingUserInput) {  // check flag
         const userChosenColor = $(this).attr("id");
-        // Store the chosen color in the player's pattern array.
         userArray.push(userChosenColor);
         playSound(userChosenColor);
         animateButton(userChosenColor);
-
         checkAnswer(userArray.length - 1);
     }
 });
@@ -60,37 +58,45 @@ $(".btn").click(function () {
 function checkAnswer(currLevel) {
     if (userArray[currLevel] === computerArray[currLevel]) {
         if (userArray.length === computerArray.length) {
-            setTimeout(function () { computerNextSequence(); }, 1000);
+            acceptingUserInput = false;
+            setTimeout(() => {
+                computerNextSequence();
+            }, 1000);
         }
-    }
-    else {
+    } else {
         playSound("wrong");
         $("body").addClass("game-over");
-        $("#level-title").html("Game Over! Click <u>here</u> or press<br>\"s\" to play again.");
-        setTimeout(function () { $("body").removeClass("game-over"); }, 300);
+        $("#level-title").html('Game Over! Click <u>here</u> or press<br>"s" to play again.');
+        setTimeout(() => $("body").removeClass("game-over"), 300);
         startOver();
     }
 }
 
 // Computer adding another pattern to the sequence.
 function computerNextSequence() {
+    acceptingUserInput = false; // lock input
     userArray = [];
     gameLevel++;
     $("#level-title").text(`Level ${gameLevel}`);
-    // Computer is randomly selecting a color to add to the pattern.
+
     const randomNumber = randomNumberGenerate(0, 3);
     const randomChosenColor = buttonColors[randomNumber];
-    // Store the chosen color in the computer's pattern array.
     computerArray.push(randomChosenColor);
 
-    $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
-    playSound(randomChosenColor);
+    // Animate + play sound + unlock input
+    $("#" + randomChosenColor)
+        .fadeIn(100)
+        .fadeOut(100)
+        .fadeIn(100, function () {
+            playSound(randomChosenColor);
+            acceptingUserInput = true; // unlock input
+        });
 }
 
 // Animate a particular colored button using jQuery.
 function animateButton(col) {
     $("#" + col).addClass("pressed");
-    setTimeout(function () {
+    setTimeout(() => {
         $("#" + col).removeClass("pressed");
     }, 100);
 }
@@ -98,7 +104,7 @@ function animateButton(col) {
 // Play sound associated with particular color.
 function playSound(col) {
     const soundFile = `./sounds/${col}.mp3`;
-    (new Audio(soundFile)).play();
+    new Audio(soundFile).play();
 }
 
 // Return a random number in the range min to max (inclusive of min and max).
@@ -106,8 +112,20 @@ function randomNumberGenerate(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Reset the game
 function startOver() {
     gameLevel = 0;
     computerArray = [];
     gameStarted = false;
+    acceptingUserInput = false;
+    dimButtons(false);
+}
+
+// Dim buttons visually when input is disabled
+function dimButtons(disable) {
+    if (disable) {
+        $(".btn").addClass("disabled");
+    } else {
+        $(".btn").removeClass("disabled");
+    }
 }
