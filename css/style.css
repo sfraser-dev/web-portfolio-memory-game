@@ -69,12 +69,45 @@ body {
   pointer-events: none;
 }
 
+/* Larger screens: spacious layout and large title */
 @media only screen and (min-height: 601px) {
   body {
     margin: 50px;
   }
+
   #level-title {
     font-size: 2rem;
     margin: 50px 50px;
+  }
+}
+
+/* Small screens (≤600px): smaller title but keep 2x2 layout */
+@media only screen and (max-width: 600px) {
+  #level-title {
+    font-size: 1.5rem;
+    margin: 30px;
+  }
+
+  .filled-cell {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Extra small screens (≤340px): stack buttons vertically and shrink title/buttons */
+@media only screen and (max-width: 340px) {
+  #level-title {
+    font-size: 1rem;
+    margin: 20px;
+  }
+
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .filled-cell {
+    width: 120px;
+    height: 120px;
+    margin: 10px auto;
   }
 }
